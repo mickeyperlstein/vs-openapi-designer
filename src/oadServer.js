@@ -19,7 +19,7 @@ class Server {
 
         var app = express();
         this.server = http.createServer(app);
-        this.io = socketio(this.server);
+        this.io = new socketio.Server(this.server);
 
         this.connections = {};
         this.lastSocketKey = 0;
